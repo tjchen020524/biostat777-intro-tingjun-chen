@@ -1,54 +1,5 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Tingjun Chen",
-    "section": "",
-    "text": "Hi everyone! I’m Tingjun Chen, a first-year master’s student in the Department of Biostatistics at the Johns Hopkins Bloomberg School of Public Health.\nI’m originally from Huzhou, China, and I earned my Bachelor’s degree in Animal Science at Zhejiang University.\nOutside of academics, I enjoy traveling, playing the violin, and playing basketball."
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About Me",
-    "section": "",
-    "text": "Johns Hopkins Bloomberg School of Public Health | Baltimore, MD\n\nScM in Biostatistics (Aug 2025 - Present)\n\nZhejiang University | Hangzhou, China\n\nBS in Animal Science (Sept 2021 - June 2025)"
-  },
-  {
-    "objectID": "about.html#education",
-    "href": "about.html#education",
-    "title": "About Me",
-    "section": "",
-    "text": "Johns Hopkins Bloomberg School of Public Health | Baltimore, MD\n\nScM in Biostatistics (Aug 2025 - Present)\n\nZhejiang University | Hangzhou, China\n\nBS in Animal Science (Sept 2021 - June 2025)"
-  },
-  {
-    "objectID": "about.html#experience",
-    "href": "about.html#experience",
-    "title": "About Me",
-    "section": "💼 Experience",
-    "text": "💼 Experience\n\nResearch Intern | Lab XYZ (2023-2024)\nData Analyst Intern | Company ABC (Summer 2023)"
-  },
-  {
-    "objectID": "about.html#skills",
-    "href": "about.html#skills",
-    "title": "About Me",
-    "section": "🛠️ Skills",
-    "text": "🛠️ Skills\n\nProgramming: R, Python\nData Science: Machine Learning, Statistics, Data Visualization\nLanguages: Mandarin (Native), English (Fluent)"
-  },
-  {
-    "objectID": "about.html#hobbies",
-    "href": "about.html#hobbies",
-    "title": "About Me",
-    "section": "🎻 Hobbies",
-    "text": "🎻 Hobbies\n\nTraveling\nViolin\nBasketball"
-  },
-  {
-    "objectID": "about.html#research-interest",
-    "href": "about.html#research-interest",
-    "title": "About Me",
-    "section": "🧑‍🎓 Research Interest",
-    "text": "🧑‍🎓 Research Interest\n\nMachine Learning\nDeep Learning\nStatistics\nSpatial Omics Data Science\nGenomics Data Science"
-  },
-  {
     "objectID": "analysis.html",
     "href": "analysis.html",
     "title": "NBA Player Performance Analysis: The Three-Point Revolution",
@@ -56,8 +7,8 @@
     "text": "How has three-point shooting evolved in the NBA, and which positions have adapted most to the modern era of basketball?\nThis analysis examines NBA player statistics to understand shooting patterns across different positions and how the game has shifted toward perimeter scoring."
   },
   {
-    "objectID": "analysis.html#research-question",
-    "href": "analysis.html#research-question",
+    "objectID": "analysis.html#question",
+    "href": "analysis.html#question",
     "title": "NBA Player Performance Analysis: The Three-Point Revolution",
     "section": "",
     "text": "How has three-point shooting evolved in the NBA, and which positions have adapted most to the modern era of basketball?\nThis analysis examines NBA player statistics to understand shooting patterns across different positions and how the game has shifted toward perimeter scoring."
@@ -98,20 +49,6 @@
     "text": "Summary\nThis analysis reveals the profound impact of the three-point revolution in modern NBA basketball. Guards have fully embraced perimeter shooting, averaging 6.7 three-point attempts per game compared to just 1.1 for centers. Despite the high volume, elite shooters maintain accuracy above 35%, demonstrating that the strategic shift toward three-point shooting is both efficient and effective. The data shows clear positional specialization, with guards serving as primary perimeter threats while centers focus on interior scoring and rebounding. These findings align with broader trends in basketball analytics (Oliver 2024), which emphasize the mathematical advantage of three-point shooting. The modern NBA has successfully integrated high-volume three-point shooting without sacrificing efficiency, fundamentally transforming the game’s strategic landscape."
   },
   {
-    "objectID": "analysis.html#functions-used",
-    "href": "analysis.html#functions-used",
-    "title": "NBA Player Performance Analysis: The Three-Point Revolution",
-    "section": "Functions Used",
-    "text": "Functions Used\ndplyr functions: 1. filter() - Selected players with significant playing time 2. mutate() - Created calculated variables (three_point_rate, scoring_efficiency, position_group) 3. group_by() - Grouped data by position 4. summarize() - Calculated position statistics 5. arrange() - Sorted players by three-point attempts 6. select() - Selected specific columns for analysis\ntidyr functions: 1. pivot_longer() - Reshaped shooting metrics data\nggplot2 geom functions: 1. geom_col() - Created bar chart for position shooting 2. geom_point() - Created scatter plots for efficiency analysis 3. geom_smooth() - Added trend line to scatter plot 4. geom_text() - Added labels to bar chart\nAdditional ggplot2 features: - facet_wrap() - Created faceted plots by position - Multiple plot customizations (titles, subtitles, captions, axis labels)"
-  },
-  {
-    "objectID": "analysis.html#technical-appendix",
-    "href": "analysis.html#technical-appendix",
-    "title": "NBA Player Performance Analysis: The Three-Point Revolution",
-    "section": "Technical Appendix",
-    "text": "Technical Appendix\n\nPackage Functions Used\ndplyr package (6 functions):\nfilter(), mutate(), group_by(), summarize(), arrange(), select()\ntidyr package (1 function):\npivot_longer()\nggplot2 package (4 geom functions):\ngeom_col(), geom_point(), geom_smooth(), geom_text()\nAdditional ggplot2 features:\nfacet_wrap() for creating faceted plots by position"
-  },
-  {
     "objectID": "analysis.html#package-functions-used",
     "href": "analysis.html#package-functions-used",
     "title": "NBA Player Performance Analysis: The Three-Point Revolution",
@@ -119,10 +56,38 @@
     "text": "Package Functions Used\ndplyr package:\nfilter(), mutate(), group_by(), summarize(), arrange(), select()\ntidyr package:\npivot_longer()\nggplot2 package:\ngeom_col(), geom_point(), geom_smooth(), geom_text(), facet_wrap()"
   },
   {
-    "objectID": "analysis.html#question",
-    "href": "analysis.html#question",
-    "title": "NBA Player Performance Analysis: The Three-Point Revolution",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Tingjun Chen",
     "section": "",
-    "text": "How has three-point shooting evolved in the NBA, and which positions have adapted most to the modern era of basketball?\nThis analysis examines NBA player statistics to understand shooting patterns across different positions and how the game has shifted toward perimeter scoring."
+    "text": "Hi everyone! I’m Tingjun Chen, a first-year master’s student in the Department of Biostatistics at the Johns Hopkins Bloomberg School of Public Health.\nI’m originally from Huzhou, China, and I achieved my Bachelor’s degree in Animal Science at Zhejiang University.\nOutside of academics, I enjoy traveling, playing the violin, and playing basketball."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About Me",
+    "section": "",
+    "text": "Johns Hopkins Bloomberg School of Public Health | Baltimore, MD\n\nScM in Biostatistics (Aug 2025 - Present)\n\nZhejiang University | Hangzhou, China\n\nBS in Animal Science (Sept 2021 - June 2025)"
+  },
+  {
+    "objectID": "about.html#education",
+    "href": "about.html#education",
+    "title": "About Me",
+    "section": "",
+    "text": "Johns Hopkins Bloomberg School of Public Health | Baltimore, MD\n\nScM in Biostatistics (Aug 2025 - Present)\n\nZhejiang University | Hangzhou, China\n\nBS in Animal Science (Sept 2021 - June 2025)"
+  },
+  {
+    "objectID": "about.html#research-interest",
+    "href": "about.html#research-interest",
+    "title": "About Me",
+    "section": "🧑‍🎓 Research Interest",
+    "text": "🧑‍🎓 Research Interest\n\nMachine Learning\nDeep Learning\nStatistics\nSpatial Omics Data Science\nGenomics Data Science"
+  },
+  {
+    "objectID": "about.html#hobbies",
+    "href": "about.html#hobbies",
+    "title": "About Me",
+    "section": "🎻 Hobbies",
+    "text": "🎻 Hobbies\nI’m really passionate about music and have been playing the violin for 16 years. During college, I was part of the orchestra and took part in many performances, which was an amazing experience. I also enjoy playing basketball and watching the NBA. My favorite team is the Golden State Warriors, and I’m a big fan of Stephen Curry. I love traveling as well, especially going hiking in nature or exploring new cities."
   }
 ]
