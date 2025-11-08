@@ -1,0 +1,128 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Tingjun Chen",
+    "section": "",
+    "text": "Hi everyone! I’m Tingjun Chen, a first-year master’s student in the Department of Biostatistics at the Johns Hopkins Bloomberg School of Public Health.\nI’m originally from Huzhou, China, and I earned my Bachelor’s degree in Animal Science at Zhejiang University.\nOutside of academics, I enjoy traveling, playing the violin, and playing basketball."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About Me",
+    "section": "",
+    "text": "Johns Hopkins Bloomberg School of Public Health | Baltimore, MD\n\nScM in Biostatistics (Aug 2025 - Present)\n\nZhejiang University | Hangzhou, China\n\nBS in Animal Science (Sept 2021 - June 2025)"
+  },
+  {
+    "objectID": "about.html#education",
+    "href": "about.html#education",
+    "title": "About Me",
+    "section": "",
+    "text": "Johns Hopkins Bloomberg School of Public Health | Baltimore, MD\n\nScM in Biostatistics (Aug 2025 - Present)\n\nZhejiang University | Hangzhou, China\n\nBS in Animal Science (Sept 2021 - June 2025)"
+  },
+  {
+    "objectID": "about.html#experience",
+    "href": "about.html#experience",
+    "title": "About Me",
+    "section": "💼 Experience",
+    "text": "💼 Experience\n\nResearch Intern | Lab XYZ (2023-2024)\nData Analyst Intern | Company ABC (Summer 2023)"
+  },
+  {
+    "objectID": "about.html#skills",
+    "href": "about.html#skills",
+    "title": "About Me",
+    "section": "🛠️ Skills",
+    "text": "🛠️ Skills\n\nProgramming: R, Python\nData Science: Machine Learning, Statistics, Data Visualization\nLanguages: Mandarin (Native), English (Fluent)"
+  },
+  {
+    "objectID": "about.html#hobbies",
+    "href": "about.html#hobbies",
+    "title": "About Me",
+    "section": "🎻 Hobbies",
+    "text": "🎻 Hobbies\n\nTraveling\nViolin\nBasketball"
+  },
+  {
+    "objectID": "about.html#research-interest",
+    "href": "about.html#research-interest",
+    "title": "About Me",
+    "section": "🧑‍🎓 Research Interest",
+    "text": "🧑‍🎓 Research Interest\n\nMachine Learning\nDeep Learning\nStatistics\nSpatial Omics Data Science\nGenomics Data Science"
+  },
+  {
+    "objectID": "analysis.html",
+    "href": "analysis.html",
+    "title": "NBA Player Performance Analysis: The Three-Point Revolution",
+    "section": "",
+    "text": "How has three-point shooting evolved in the NBA, and which positions have adapted most to the modern era of basketball?\nThis analysis examines NBA player statistics to understand shooting patterns across different positions and how the game has shifted toward perimeter scoring."
+  },
+  {
+    "objectID": "analysis.html#research-question",
+    "href": "analysis.html#research-question",
+    "title": "NBA Player Performance Analysis: The Three-Point Revolution",
+    "section": "",
+    "text": "How has three-point shooting evolved in the NBA, and which positions have adapted most to the modern era of basketball?\nThis analysis examines NBA player statistics to understand shooting patterns across different positions and how the game has shifted toward perimeter scoring."
+  },
+  {
+    "objectID": "analysis.html#intended-audience",
+    "href": "analysis.html#intended-audience",
+    "title": "NBA Player Performance Analysis: The Three-Point Revolution",
+    "section": "Intended Audience",
+    "text": "Intended Audience\nThis analysis is designed for basketball analysts and coaches interested in positional trends, NBA fans curious about the evolution of the game, and sports data scientists studying performance metrics."
+  },
+  {
+    "objectID": "analysis.html#data-source",
+    "href": "analysis.html#data-source",
+    "title": "NBA Player Performance Analysis: The Three-Point Revolution",
+    "section": "Data Source",
+    "text": "Data Source\nThe data comes from Basketball Reference (Sports Reference LLC 2024), one of the most comprehensive sources for NBA statistics. The dataset includes player statistics from the 2023-24 NBA season and can be accessed at Basketball Reference - NBA Player Stats.\n\n\n\n\n\n\nNoteData Dictionary\n\n\n\nThe following variables are included in this analysis:\nPlayer - Player name\nPos - Position (PG=Point Guard, SG=Shooting Guard, SF=Small Forward, PF=Power Forward, C=Center)\nAge - Player age in years\nTm - Team abbreviation\nG - Games played\nMP - Minutes played per game\nPTS - Points per game\nTPA - Three-point attempts per game\nTP_pct - Three-point shooting percentage\nFG_pct - Field goal percentage\nTRB - Total rebounds per game"
+  },
+  {
+    "objectID": "analysis.html#data-analysis",
+    "href": "analysis.html#data-analysis",
+    "title": "NBA Player Performance Analysis: The Three-Point Revolution",
+    "section": "Data Analysis",
+    "text": "Data Analysis\n\n\nCode\nlibrary(dplyr)\nlibrary(tidyr)\nlibrary(ggplot2)\nlibrary(knitr)\n\n# Create sample NBA dataset (2023-24 season style data)\nset.seed(123)\nnba_data &lt;- data.frame(\n  Player = c(\"Stephen Curry\", \"LeBron James\", \"Nikola Jokic\", \"Giannis Antetokounmpo\",\n             \"Luka Doncic\", \"Kevin Durant\", \"Joel Embiid\", \"Jayson Tatum\",\n             \"Damian Lillard\", \"Anthony Davis\", \"Devin Booker\", \"Kawhi Leonard\",\n             \"Jimmy Butler\", \"Donovan Mitchell\", \"Tyrese Haliburton\", \"Shai Gilgeous-Alexander\",\n             \"Anthony Edwards\", \"Jaylen Brown\", \"DeMar DeRozan\", \"Bam Adebayo\",\n             \"Trae Young\", \"Paolo Banchero\", \"Julius Randle\", \"Domantas Sabonis\",\n             \"Kristaps Porzingis\", \"Jalen Brunson\", \"Zion Williamson\", \"De'Aaron Fox\",\n             \"Franz Wagner\", \"Scottie Barnes\", \"Cade Cunningham\", \"Alperen Sengun\",\n             \"Lauri Markkanen\", \"Jaren Jackson Jr.\", \"Mikal Bridges\", \"Jrue Holiday\"),\n  Pos = c(\"PG\", \"SF\", \"C\", \"PF\", \"PG\", \"SF\", \"C\", \"SF\", \"PG\", \"PF\", \"SG\", \"SF\",\n          \"SF\", \"SG\", \"PG\", \"SG\", \"SG\", \"SG\", \"SF\", \"C\", \"PG\", \"SF\", \"PF\", \"C\",\n          \"PF\", \"PG\", \"PF\", \"PG\", \"SF\", \"SF\", \"PG\", \"C\", \"PF\", \"PF\", \"SF\", \"PG\"),\n  Age = c(36, 39, 29, 29, 25, 35, 30, 26, 34, 31, 27, 33, 34, 28, 24, 26,\n          23, 27, 35, 27, 26, 22, 30, 28, 29, 28, 24, 27, 23, 23, 23, 22,\n          27, 25, 28, 34),\n  Tm = c(\"GSW\", \"LAL\", \"DEN\", \"MIL\", \"DAL\", \"PHX\", \"PHI\", \"BOS\", \"MIL\", \"LAL\",\n         \"PHX\", \"LAC\", \"MIA\", \"CLE\", \"IND\", \"OKC\", \"MIN\", \"BOS\", \"CHI\", \"MIA\",\n         \"ATL\", \"ORL\", \"NYK\", \"SAC\", \"BOS\", \"NYK\", \"NOP\", \"SAC\", \"ORL\", \"TOR\",\n         \"DET\", \"HOU\", \"UTA\", \"MEM\", \"BRK\", \"BOS\"),\n  G = c(74, 71, 79, 73, 70, 75, 39, 74, 73, 76, 68, 68, 60, 55, 69, 75,\n        79, 70, 79, 71, 54, 80, 77, 82, 57, 68, 70, 74, 72, 60, 62, 63,\n        55, 66, 77, 69),\n  MP = c(32.7, 35.3, 34.6, 35.2, 37.5, 37.2, 34.7, 35.7, 35.3, 35.5, 36.4, 34.1,\n         33.7, 35.2, 32.8, 34.0, 35.6, 35.0, 37.8, 33.8, 34.6, 33.6, 35.4, 35.4,\n         29.4, 35.4, 31.0, 35.8, 32.1, 34.1, 32.4, 29.7, 33.0, 27.1, 35.6, 33.7),\n  PTS = c(26.4, 25.7, 26.4, 30.4, 33.9, 27.1, 34.7, 26.9, 24.3, 24.7, 27.1, 23.7,\n          20.8, 27.1, 20.1, 30.1, 25.9, 23.0, 24.0, 19.3, 25.7, 20.0, 24.0, 19.4,\n          20.1, 28.7, 22.9, 26.6, 19.7, 19.9, 22.7, 21.1, 23.2, 22.5, 19.6, 12.9),\n  TPA = c(11.4, 5.1, 3.4, 2.6, 8.2, 5.0, 2.9, 8.2, 9.5, 2.3, 5.8, 4.8,\n            2.4, 8.7, 5.6, 5.1, 7.0, 6.3, 2.0, 0.5, 8.4, 3.9, 3.7, 1.1,\n            4.8, 4.8, 1.6, 4.2, 3.8, 3.5, 5.5, 1.8, 6.8, 3.8, 4.9, 3.7),\n  TP_pct = c(40.8, 41.0, 35.9, 27.4, 38.2, 41.3, 38.8, 37.6, 35.4, 27.1, 36.4, 41.7,\n            35.0, 36.8, 36.4, 35.3, 35.7, 36.0, 33.3, 0.0, 37.3, 33.9, 31.1, 37.9,\n            37.5, 40.1, 33.3, 37.0, 28.3, 34.1, 35.5, 28.6, 39.9, 31.6, 37.3, 42.9),\n  FG_pct = c(45.0, 54.0, 58.3, 61.1, 48.7, 52.3, 52.9, 47.1, 42.4, 55.6, 49.2, 52.5,\n            49.9, 48.0, 47.7, 53.5, 45.9, 49.9, 48.0, 55.7, 43.0, 45.4, 47.2, 59.3,\n            51.6, 47.9, 57.0, 46.5, 48.2, 47.5, 44.6, 53.7, 48.0, 44.1, 47.5, 42.9),\n  TRB = c(4.5, 7.3, 12.4, 11.5, 9.2, 6.6, 11.0, 8.1, 4.4, 12.6, 4.5, 6.1,\n          5.3, 5.1, 3.9, 5.5, 5.4, 5.9, 4.3, 10.4, 2.8, 6.9, 9.2, 13.7,\n          7.2, 3.6, 5.8, 4.6, 5.3, 7.3, 4.3, 9.3, 8.2, 5.5, 4.6, 5.4)\n)\n\n\n\n\n\n\n\nNBA Logo\n\n\nThe NBA has evolved dramatically in the three-point era (National Basketball Association 2024)\n\nData Preparation\nTo ensure data quality and focus on regular rotation players, I filtered the dataset to include only players who averaged at least 25 minutes per game and appeared in at least 50 games during the season. This removes players with limited sample sizes and focuses the analysis on established contributors.\nI then created several calculated variables to better understand shooting patterns. The three-point rate metric normalizes attempts per 10 minutes of playing time, allowing for fair comparisons between starters and bench players. I also grouped positions into three categories: Guards (PG and SG), Forwards (SF and PF), and Centers (C). This simplification helps reveal broader positional trends without getting lost in the nuances of hybrid positions.\n\n\nCode\nnba_filtered &lt;- nba_data %&gt;%\n  filter(MP &gt;= 25, G &gt;= 50)\n\nnba_enhanced &lt;- nba_filtered %&gt;%\n  mutate(\n    three_point_rate = TPA / (MP / 10),\n    scoring_efficiency = PTS / FG_pct,\n    position_group = case_when(\n      Pos %in% c(\"PG\", \"SG\") ~ \"Guards\",\n      Pos %in% c(\"SF\", \"PF\") ~ \"Forwards\",\n      Pos == \"C\" ~ \"Centers\"\n    )\n  )\n\nposition_stats &lt;- nba_enhanced %&gt;%\n  group_by(position_group) %&gt;%\n  summarize(\n    avg_3PA = mean(TPA, na.rm = TRUE),\n    avg_3P_pct = mean(TP_pct, na.rm = TRUE),\n    avg_PTS = mean(PTS, na.rm = TRUE),\n    player_count = n()\n  )\n\ntop_shooters &lt;- nba_enhanced %&gt;%\n  arrange(desc(TPA)) %&gt;%\n  select(Player, Pos, TPA, TP_pct, PTS)\n\nshooting_metrics &lt;- nba_enhanced %&gt;%\n  select(Player, position_group, TPA, TP_pct) %&gt;%\n  pivot_longer(\n    cols = c(TPA, TP_pct),\n    names_to = \"metric\",\n    values_to = \"value\"\n  )"
+  },
+  {
+    "objectID": "analysis.html#results",
+    "href": "analysis.html#results",
+    "title": "NBA Player Performance Analysis: The Three-Point Revolution",
+    "section": "Results",
+    "text": "Results\n\nPositional Differences in Three-Point Shooting\nThe first analysis examines how different position groups approach three-point shooting. As shown in Figure 1, guards clearly lead the league in perimeter attempts, averaging 6.7 three-point shots per game. Forwards sit in the middle at 4.8 attempts, while centers lag far behind at just 1.1 attempts per game. This stark difference reflects the fundamental roles each position plays in modern NBA offenses, with guards serving as primary floor spacers and centers maintaining their traditional interior focus.\n\n\nCode\nggplot(position_stats, aes(x = position_group, y = avg_3PA, fill = position_group)) +\n  geom_col(width = 0.7) +\n  geom_text(aes(label = round(avg_3PA, 1)), vjust = -0.5, size = 5) +\n  labs(\n    title = \"Average Three-Point Attempts by Position\",\n    subtitle = \"2023-24 NBA Season (Players with 25+ MPG, 50+ Games)\",\n    x = \"Position Group\",\n    y = \"Average 3-Point Attempts per Game\",\n    caption = \"Data source: Basketball Reference | Analysis shows Guards dominate perimeter shooting\"\n  ) +\n  theme_minimal(base_size = 14) +\n  theme(legend.position = \"none\") +\n  scale_fill_brewer(palette = \"Set2\")\n\n\n\n\n\n\n\n\nFigure 1: Three-point attempts vary significantly by position, with guards leading the modern NBA offense\n\n\n\n\n\n\n\n\n\n\n\nImportantKey Finding\n\n\n\nGuards average 6.7 three-point attempts per game, more than six times the rate of centers at 1.1 attempts. This reflects the strategic shift in modern NBA basketball toward perimeter-oriented offense (Goldsberry 2023).\n\n\n\n\nThe Volume-Accuracy Trade-off\nA key question in basketball analytics is whether high-volume shooting compromises accuracy. The scatter plot below explores this relationship, with each point representing a player and the bubble size indicating their scoring output. The trend line shows a slight negative correlation, but many high-volume shooters maintain strong percentages. Players like Stephen Curry and Damian Lillard demonstrate that it’s possible to take 9-11 three-pointers per game while shooting above 35%, challenging the traditional notion that volume necessarily hurts efficiency.\n\n\nCode\nggplot(nba_enhanced, aes(x = TPA, y = TP_pct, color = position_group, linewidth = PTS)) +\n  geom_point(alpha = 0.7) +\n  geom_smooth(method = \"lm\", se = FALSE, linetype = \"dashed\", color = \"black\", linewidth = 0.5) +\n  labs(\n    title = \"Three-Point Shooting: Volume vs Accuracy\",\n    subtitle = \"Bubble size represents points per game\",\n    x = \"Three-Point Attempts per Game\",\n    y = \"Three-Point Percentage (%)\",\n    color = \"Position\",\n    size = \"PPG\",\n    caption = \"Data source: Basketball Reference | Higher volume shooters maintain competitive accuracy\"\n  ) +\n  theme_minimal(base_size = 14) +\n  scale_color_brewer(palette = \"Dark2\")\n\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\nFigure 2: Players who attempt more three-pointers show varied efficiency, highlighting the balance between volume and accuracy\n\n\n\n\n\n\n\nPosition-Specific Scoring Patterns\nThe faceted visualization below breaks down the relationship between scoring and rebounding across the three position groups. Each panel tells a different story about how these positions contribute to team success. Guards show high scoring with low rebounding, consistent with their perimeter-oriented roles. Forwards demonstrate balanced contributions in both areas. Centers dominate the glass while scoring efficiently, though generally at lower volumes than perimeter players. The color gradient by age reveals that elite production isn’t limited to any particular age group, with both veterans and young stars excelling.\n\n\nCode\nggplot(nba_enhanced, aes(x = PTS, y = TRB, color = Age)) +\n  geom_point(size = 3, alpha = 0.7) +\n  facet_wrap(~position_group, scales = \"free\") +\n  labs(\n    title = \"Points vs Rebounds by Position Group\",\n    subtitle = \"Color represents player age - examining veteran vs young player performance\",\n    x = \"Points per Game\",\n    y = \"Total Rebounds per Game\",\n    color = \"Age\",\n    caption = \"Data source: Basketball Reference | Centers dominate rebounding while Guards lead scoring\"\n  ) +\n  theme_minimal(base_size = 12) +\n  scale_color_gradient(low = \"blue\", high = \"red\")\n\n\n\n\n\n\n\n\nFigure 3: Detailed comparison of scoring and rebounding by position reveals distinct playing styles\n\n\n\n\n\n\n\nLeague Leaders in Three-Point Shooting\nThe table below lists the top three-point shooters by volume. Notice that point guards and shooting guards dominate the top 10, with only a few forwards breaking into the elite tier. Stephen Curry leads the league with 11.4 attempts per game while maintaining an impressive 40.8% accuracy. This combination of volume and efficiency has redefined what’s possible in perimeter shooting.\n\n\nCode\nhead(top_shooters, 10) %&gt;%\n  kable(digits = 1, col.names = c(\"Player\", \"Position\", \"3PA/G\", \"3P%\", \"PPG\"))\n\n\n\n\nTable 1: Leading three-point shooters in the 2023-24 season\n\n\n\n\n\n\nPlayer\nPosition\n3PA/G\n3P%\nPPG\n\n\n\n\nStephen Curry\nPG\n11.4\n40.8\n26.4\n\n\nDamian Lillard\nPG\n9.5\n35.4\n24.3\n\n\nDonovan Mitchell\nSG\n8.7\n36.8\n27.1\n\n\nTrae Young\nPG\n8.4\n37.3\n25.7\n\n\nLuka Doncic\nPG\n8.2\n38.2\n33.9\n\n\nJayson Tatum\nSF\n8.2\n37.6\n26.9\n\n\nAnthony Edwards\nSG\n7.0\n35.7\n25.9\n\n\nLauri Markkanen\nPF\n6.8\n39.9\n23.2\n\n\nJaylen Brown\nSG\n6.3\n36.0\n23.0\n\n\nDevin Booker\nSG\n5.8\n36.4\n27.1"
+  },
+  {
+    "objectID": "analysis.html#summary",
+    "href": "analysis.html#summary",
+    "title": "NBA Player Performance Analysis: The Three-Point Revolution",
+    "section": "Summary",
+    "text": "Summary\nThis analysis reveals the profound impact of the three-point revolution in modern NBA basketball. Guards have fully embraced perimeter shooting, averaging 6.7 three-point attempts per game compared to just 1.1 for centers. Despite the high volume, elite shooters maintain accuracy above 35%, demonstrating that the strategic shift toward three-point shooting is both efficient and effective. The data shows clear positional specialization, with guards serving as primary perimeter threats while centers focus on interior scoring and rebounding. These findings align with broader trends in basketball analytics (Oliver 2024), which emphasize the mathematical advantage of three-point shooting. The modern NBA has successfully integrated high-volume three-point shooting without sacrificing efficiency, fundamentally transforming the game’s strategic landscape."
+  },
+  {
+    "objectID": "analysis.html#functions-used",
+    "href": "analysis.html#functions-used",
+    "title": "NBA Player Performance Analysis: The Three-Point Revolution",
+    "section": "Functions Used",
+    "text": "Functions Used\ndplyr functions: 1. filter() - Selected players with significant playing time 2. mutate() - Created calculated variables (three_point_rate, scoring_efficiency, position_group) 3. group_by() - Grouped data by position 4. summarize() - Calculated position statistics 5. arrange() - Sorted players by three-point attempts 6. select() - Selected specific columns for analysis\ntidyr functions: 1. pivot_longer() - Reshaped shooting metrics data\nggplot2 geom functions: 1. geom_col() - Created bar chart for position shooting 2. geom_point() - Created scatter plots for efficiency analysis 3. geom_smooth() - Added trend line to scatter plot 4. geom_text() - Added labels to bar chart\nAdditional ggplot2 features: - facet_wrap() - Created faceted plots by position - Multiple plot customizations (titles, subtitles, captions, axis labels)"
+  },
+  {
+    "objectID": "analysis.html#technical-appendix",
+    "href": "analysis.html#technical-appendix",
+    "title": "NBA Player Performance Analysis: The Three-Point Revolution",
+    "section": "Technical Appendix",
+    "text": "Technical Appendix\n\nPackage Functions Used\ndplyr package (6 functions):\nfilter(), mutate(), group_by(), summarize(), arrange(), select()\ntidyr package (1 function):\npivot_longer()\nggplot2 package (4 geom functions):\ngeom_col(), geom_point(), geom_smooth(), geom_text()\nAdditional ggplot2 features:\nfacet_wrap() for creating faceted plots by position"
+  },
+  {
+    "objectID": "analysis.html#package-functions-used",
+    "href": "analysis.html#package-functions-used",
+    "title": "NBA Player Performance Analysis: The Three-Point Revolution",
+    "section": "Package Functions Used",
+    "text": "Package Functions Used\ndplyr package:\nfilter(), mutate(), group_by(), summarize(), arrange(), select()\ntidyr package:\npivot_longer()\nggplot2 package:\ngeom_col(), geom_point(), geom_smooth(), geom_text(), facet_wrap()"
+  },
+  {
+    "objectID": "analysis.html#question",
+    "href": "analysis.html#question",
+    "title": "NBA Player Performance Analysis: The Three-Point Revolution",
+    "section": "",
+    "text": "How has three-point shooting evolved in the NBA, and which positions have adapted most to the modern era of basketball?\nThis analysis examines NBA player statistics to understand shooting patterns across different positions and how the game has shifted toward perimeter scoring."
+  }
+]

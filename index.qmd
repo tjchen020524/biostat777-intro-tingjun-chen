@@ -1,0 +1,19 @@
+---
+title: "Tingjun Chen"
+about:
+    template: jolla
+    image: profile.jpg
+    links:
+    - icon: linkedin
+      text: LinkedIn
+      url: "https://www.linkedin.com/in/tingjun-chen-a19320343/"
+    - icon: github
+      text: GitHub
+      url: "https://github.com/tjchen020524"
+---
+
+Hi everyone! I'm Tingjun Chen, a first-year master's student in the Department of Biostatistics at the Johns Hopkins Bloomberg School of Public Health. 
+
+I’m originally from Huzhou, China, and I achieved my Bachelor’s degree in Animal Science at Zhejiang University.
+
+Outside of academics, I enjoy traveling, playing the violin, and playing basketball.

@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.25">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>NBA Player Performance Analysis: The Three-Point Revolution – Tingjun Chen</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-5b4ad623e5705c0698d39aec6f10cf02.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    </a>
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Tingjun Chen</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">About me</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./analysis.html" aria-current="page"> 
+<span class="menu-text">Example analysis</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul class="collapse">
+  <li><a href="#question" id="toc-question" class="nav-link active" data-scroll-target="#question">Question</a></li>
+  <li><a href="#intended-audience" id="toc-intended-audience" class="nav-link" data-scroll-target="#intended-audience">Intended Audience</a></li>
+  <li><a href="#data-source" id="toc-data-source" class="nav-link" data-scroll-target="#data-source">Data Source</a></li>
+  <li><a href="#data-analysis" id="toc-data-analysis" class="nav-link" data-scroll-target="#data-analysis">Data Analysis</a></li>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
+  <li><a href="#package-functions-used" id="toc-package-functions-used" class="nav-link" data-scroll-target="#package-functions-used">Package Functions Used</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">NBA Player Performance Analysis: The Three-Point Revolution</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="question" class="level2">
+<h2 class="anchored" data-anchor-id="question">Question</h2>
+<p><strong>How has three-point shooting evolved in the NBA, and which positions have adapted most to the modern era of basketball?</strong></p>
+<p>This analysis examines NBA player statistics to understand shooting patterns across different positions and how the game has shifted toward perimeter scoring.</p>
+</section>
+<section id="intended-audience" class="level2">
+<h2 class="anchored" data-anchor-id="intended-audience">Intended Audience</h2>
+<p>This analysis is designed for basketball analysts and coaches interested in positional trends, NBA fans curious about the evolution of the game, and sports data scientists studying performance metrics.</p>
+</section>
+<section id="data-source" class="level2">
+<h2 class="anchored" data-anchor-id="data-source">Data Source</h2>
+<p>The data comes from <strong>Basketball Reference</strong> <span class="citation" data-cites="basketballref2024">(<a href="#ref-basketballref2024" role="doc-biblioref">Sports Reference LLC 2024</a>)</span>, one of the most comprehensive sources for NBA statistics. The dataset includes player statistics from the 2023-24 NBA season and can be accessed at <a href="https://www.basketball-reference.com/leagues/NBA_2024_per_game.html">Basketball Reference - NBA Player Stats</a>.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Data Dictionary
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The following variables are included in this analysis:</p>
+<p><strong>Player</strong> - Player name<br>
+<strong>Pos</strong> - Position (PG=Point Guard, SG=Shooting Guard, SF=Small Forward, PF=Power Forward, C=Center)<br>
+<strong>Age</strong> - Player age in years<br>
+<strong>Tm</strong> - Team abbreviation<br>
+<strong>G</strong> - Games played<br>
+<strong>MP</strong> - Minutes played per game<br>
+<strong>PTS</strong> - Points per game<br>
+<strong>TPA</strong> - Three-point attempts per game<br>
+<strong>TP_pct</strong> - Three-point shooting percentage<br>
+<strong>FG_pct</strong> - Field goal percentage<br>
+<strong>TRB</strong> - Total rebounds per game</p>
+</div>
+</div>
+</section>
+<section id="data-analysis" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="data-analysis">Data Analysis</h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Create sample NBA dataset (2023-24 season style data)</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>nba_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">Player =</span> <span class="fu">c</span>(<span class="st">"Stephen Curry"</span>, <span class="st">"LeBron James"</span>, <span class="st">"Nikola Jokic"</span>, <span class="st">"Giannis Antetokounmpo"</span>,</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>             <span class="st">"Luka Doncic"</span>, <span class="st">"Kevin Durant"</span>, <span class="st">"Joel Embiid"</span>, <span class="st">"Jayson Tatum"</span>,</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>             <span class="st">"Damian Lillard"</span>, <span class="st">"Anthony Davis"</span>, <span class="st">"Devin Booker"</span>, <span class="st">"Kawhi Leonard"</span>,</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>             <span class="st">"Jimmy Butler"</span>, <span class="st">"Donovan Mitchell"</span>, <span class="st">"Tyrese Haliburton"</span>, <span class="st">"Shai Gilgeous-Alexander"</span>,</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>             <span class="st">"Anthony Edwards"</span>, <span class="st">"Jaylen Brown"</span>, <span class="st">"DeMar DeRozan"</span>, <span class="st">"Bam Adebayo"</span>,</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>             <span class="st">"Trae Young"</span>, <span class="st">"Paolo Banchero"</span>, <span class="st">"Julius Randle"</span>, <span class="st">"Domantas Sabonis"</span>,</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>             <span class="st">"Kristaps Porzingis"</span>, <span class="st">"Jalen Brunson"</span>, <span class="st">"Zion Williamson"</span>, <span class="st">"De'Aaron Fox"</span>,</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>             <span class="st">"Franz Wagner"</span>, <span class="st">"Scottie Barnes"</span>, <span class="st">"Cade Cunningham"</span>, <span class="st">"Alperen Sengun"</span>,</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>             <span class="st">"Lauri Markkanen"</span>, <span class="st">"Jaren Jackson Jr."</span>, <span class="st">"Mikal Bridges"</span>, <span class="st">"Jrue Holiday"</span>),</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  <span class="at">Pos =</span> <span class="fu">c</span>(<span class="st">"PG"</span>, <span class="st">"SF"</span>, <span class="st">"C"</span>, <span class="st">"PF"</span>, <span class="st">"PG"</span>, <span class="st">"SF"</span>, <span class="st">"C"</span>, <span class="st">"SF"</span>, <span class="st">"PG"</span>, <span class="st">"PF"</span>, <span class="st">"SG"</span>, <span class="st">"SF"</span>,</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>          <span class="st">"SF"</span>, <span class="st">"SG"</span>, <span class="st">"PG"</span>, <span class="st">"SG"</span>, <span class="st">"SG"</span>, <span class="st">"SG"</span>, <span class="st">"SF"</span>, <span class="st">"C"</span>, <span class="st">"PG"</span>, <span class="st">"SF"</span>, <span class="st">"PF"</span>, <span class="st">"C"</span>,</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>          <span class="st">"PF"</span>, <span class="st">"PG"</span>, <span class="st">"PF"</span>, <span class="st">"PG"</span>, <span class="st">"SF"</span>, <span class="st">"SF"</span>, <span class="st">"PG"</span>, <span class="st">"C"</span>, <span class="st">"PF"</span>, <span class="st">"PF"</span>, <span class="st">"SF"</span>, <span class="st">"PG"</span>),</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>  <span class="at">Age =</span> <span class="fu">c</span>(<span class="dv">36</span>, <span class="dv">39</span>, <span class="dv">29</span>, <span class="dv">29</span>, <span class="dv">25</span>, <span class="dv">35</span>, <span class="dv">30</span>, <span class="dv">26</span>, <span class="dv">34</span>, <span class="dv">31</span>, <span class="dv">27</span>, <span class="dv">33</span>, <span class="dv">34</span>, <span class="dv">28</span>, <span class="dv">24</span>, <span class="dv">26</span>,</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>          <span class="dv">23</span>, <span class="dv">27</span>, <span class="dv">35</span>, <span class="dv">27</span>, <span class="dv">26</span>, <span class="dv">22</span>, <span class="dv">30</span>, <span class="dv">28</span>, <span class="dv">29</span>, <span class="dv">28</span>, <span class="dv">24</span>, <span class="dv">27</span>, <span class="dv">23</span>, <span class="dv">23</span>, <span class="dv">23</span>, <span class="dv">22</span>,</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>          <span class="dv">27</span>, <span class="dv">25</span>, <span class="dv">28</span>, <span class="dv">34</span>),</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>  <span class="at">Tm =</span> <span class="fu">c</span>(<span class="st">"GSW"</span>, <span class="st">"LAL"</span>, <span class="st">"DEN"</span>, <span class="st">"MIL"</span>, <span class="st">"DAL"</span>, <span class="st">"PHX"</span>, <span class="st">"PHI"</span>, <span class="st">"BOS"</span>, <span class="st">"MIL"</span>, <span class="st">"LAL"</span>,</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>         <span class="st">"PHX"</span>, <span class="st">"LAC"</span>, <span class="st">"MIA"</span>, <span class="st">"CLE"</span>, <span class="st">"IND"</span>, <span class="st">"OKC"</span>, <span class="st">"MIN"</span>, <span class="st">"BOS"</span>, <span class="st">"CHI"</span>, <span class="st">"MIA"</span>,</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>         <span class="st">"ATL"</span>, <span class="st">"ORL"</span>, <span class="st">"NYK"</span>, <span class="st">"SAC"</span>, <span class="st">"BOS"</span>, <span class="st">"NYK"</span>, <span class="st">"NOP"</span>, <span class="st">"SAC"</span>, <span class="st">"ORL"</span>, <span class="st">"TOR"</span>,</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>         <span class="st">"DET"</span>, <span class="st">"HOU"</span>, <span class="st">"UTA"</span>, <span class="st">"MEM"</span>, <span class="st">"BRK"</span>, <span class="st">"BOS"</span>),</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>  <span class="at">G =</span> <span class="fu">c</span>(<span class="dv">74</span>, <span class="dv">71</span>, <span class="dv">79</span>, <span class="dv">73</span>, <span class="dv">70</span>, <span class="dv">75</span>, <span class="dv">39</span>, <span class="dv">74</span>, <span class="dv">73</span>, <span class="dv">76</span>, <span class="dv">68</span>, <span class="dv">68</span>, <span class="dv">60</span>, <span class="dv">55</span>, <span class="dv">69</span>, <span class="dv">75</span>,</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>        <span class="dv">79</span>, <span class="dv">70</span>, <span class="dv">79</span>, <span class="dv">71</span>, <span class="dv">54</span>, <span class="dv">80</span>, <span class="dv">77</span>, <span class="dv">82</span>, <span class="dv">57</span>, <span class="dv">68</span>, <span class="dv">70</span>, <span class="dv">74</span>, <span class="dv">72</span>, <span class="dv">60</span>, <span class="dv">62</span>, <span class="dv">63</span>,</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>        <span class="dv">55</span>, <span class="dv">66</span>, <span class="dv">77</span>, <span class="dv">69</span>),</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>  <span class="at">MP =</span> <span class="fu">c</span>(<span class="fl">32.7</span>, <span class="fl">35.3</span>, <span class="fl">34.6</span>, <span class="fl">35.2</span>, <span class="fl">37.5</span>, <span class="fl">37.2</span>, <span class="fl">34.7</span>, <span class="fl">35.7</span>, <span class="fl">35.3</span>, <span class="fl">35.5</span>, <span class="fl">36.4</span>, <span class="fl">34.1</span>,</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>         <span class="fl">33.7</span>, <span class="fl">35.2</span>, <span class="fl">32.8</span>, <span class="fl">34.0</span>, <span class="fl">35.6</span>, <span class="fl">35.0</span>, <span class="fl">37.8</span>, <span class="fl">33.8</span>, <span class="fl">34.6</span>, <span class="fl">33.6</span>, <span class="fl">35.4</span>, <span class="fl">35.4</span>,</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>         <span class="fl">29.4</span>, <span class="fl">35.4</span>, <span class="fl">31.0</span>, <span class="fl">35.8</span>, <span class="fl">32.1</span>, <span class="fl">34.1</span>, <span class="fl">32.4</span>, <span class="fl">29.7</span>, <span class="fl">33.0</span>, <span class="fl">27.1</span>, <span class="fl">35.6</span>, <span class="fl">33.7</span>),</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>  <span class="at">PTS =</span> <span class="fu">c</span>(<span class="fl">26.4</span>, <span class="fl">25.7</span>, <span class="fl">26.4</span>, <span class="fl">30.4</span>, <span class="fl">33.9</span>, <span class="fl">27.1</span>, <span class="fl">34.7</span>, <span class="fl">26.9</span>, <span class="fl">24.3</span>, <span class="fl">24.7</span>, <span class="fl">27.1</span>, <span class="fl">23.7</span>,</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>          <span class="fl">20.8</span>, <span class="fl">27.1</span>, <span class="fl">20.1</span>, <span class="fl">30.1</span>, <span class="fl">25.9</span>, <span class="fl">23.0</span>, <span class="fl">24.0</span>, <span class="fl">19.3</span>, <span class="fl">25.7</span>, <span class="fl">20.0</span>, <span class="fl">24.0</span>, <span class="fl">19.4</span>,</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>          <span class="fl">20.1</span>, <span class="fl">28.7</span>, <span class="fl">22.9</span>, <span class="fl">26.6</span>, <span class="fl">19.7</span>, <span class="fl">19.9</span>, <span class="fl">22.7</span>, <span class="fl">21.1</span>, <span class="fl">23.2</span>, <span class="fl">22.5</span>, <span class="fl">19.6</span>, <span class="fl">12.9</span>),</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>  <span class="at">TPA =</span> <span class="fu">c</span>(<span class="fl">11.4</span>, <span class="fl">5.1</span>, <span class="fl">3.4</span>, <span class="fl">2.6</span>, <span class="fl">8.2</span>, <span class="fl">5.0</span>, <span class="fl">2.9</span>, <span class="fl">8.2</span>, <span class="fl">9.5</span>, <span class="fl">2.3</span>, <span class="fl">5.8</span>, <span class="fl">4.8</span>,</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>            <span class="fl">2.4</span>, <span class="fl">8.7</span>, <span class="fl">5.6</span>, <span class="fl">5.1</span>, <span class="fl">7.0</span>, <span class="fl">6.3</span>, <span class="fl">2.0</span>, <span class="fl">0.5</span>, <span class="fl">8.4</span>, <span class="fl">3.9</span>, <span class="fl">3.7</span>, <span class="fl">1.1</span>,</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>            <span class="fl">4.8</span>, <span class="fl">4.8</span>, <span class="fl">1.6</span>, <span class="fl">4.2</span>, <span class="fl">3.8</span>, <span class="fl">3.5</span>, <span class="fl">5.5</span>, <span class="fl">1.8</span>, <span class="fl">6.8</span>, <span class="fl">3.8</span>, <span class="fl">4.9</span>, <span class="fl">3.7</span>),</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>  <span class="at">TP_pct =</span> <span class="fu">c</span>(<span class="fl">40.8</span>, <span class="fl">41.0</span>, <span class="fl">35.9</span>, <span class="fl">27.4</span>, <span class="fl">38.2</span>, <span class="fl">41.3</span>, <span class="fl">38.8</span>, <span class="fl">37.6</span>, <span class="fl">35.4</span>, <span class="fl">27.1</span>, <span class="fl">36.4</span>, <span class="fl">41.7</span>,</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>            <span class="fl">35.0</span>, <span class="fl">36.8</span>, <span class="fl">36.4</span>, <span class="fl">35.3</span>, <span class="fl">35.7</span>, <span class="fl">36.0</span>, <span class="fl">33.3</span>, <span class="fl">0.0</span>, <span class="fl">37.3</span>, <span class="fl">33.9</span>, <span class="fl">31.1</span>, <span class="fl">37.9</span>,</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>            <span class="fl">37.5</span>, <span class="fl">40.1</span>, <span class="fl">33.3</span>, <span class="fl">37.0</span>, <span class="fl">28.3</span>, <span class="fl">34.1</span>, <span class="fl">35.5</span>, <span class="fl">28.6</span>, <span class="fl">39.9</span>, <span class="fl">31.6</span>, <span class="fl">37.3</span>, <span class="fl">42.9</span>),</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>  <span class="at">FG_pct =</span> <span class="fu">c</span>(<span class="fl">45.0</span>, <span class="fl">54.0</span>, <span class="fl">58.3</span>, <span class="fl">61.1</span>, <span class="fl">48.7</span>, <span class="fl">52.3</span>, <span class="fl">52.9</span>, <span class="fl">47.1</span>, <span class="fl">42.4</span>, <span class="fl">55.6</span>, <span class="fl">49.2</span>, <span class="fl">52.5</span>,</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>            <span class="fl">49.9</span>, <span class="fl">48.0</span>, <span class="fl">47.7</span>, <span class="fl">53.5</span>, <span class="fl">45.9</span>, <span class="fl">49.9</span>, <span class="fl">48.0</span>, <span class="fl">55.7</span>, <span class="fl">43.0</span>, <span class="fl">45.4</span>, <span class="fl">47.2</span>, <span class="fl">59.3</span>,</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>            <span class="fl">51.6</span>, <span class="fl">47.9</span>, <span class="fl">57.0</span>, <span class="fl">46.5</span>, <span class="fl">48.2</span>, <span class="fl">47.5</span>, <span class="fl">44.6</span>, <span class="fl">53.7</span>, <span class="fl">48.0</span>, <span class="fl">44.1</span>, <span class="fl">47.5</span>, <span class="fl">42.9</span>),</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>  <span class="at">TRB =</span> <span class="fu">c</span>(<span class="fl">4.5</span>, <span class="fl">7.3</span>, <span class="fl">12.4</span>, <span class="fl">11.5</span>, <span class="fl">9.2</span>, <span class="fl">6.6</span>, <span class="fl">11.0</span>, <span class="fl">8.1</span>, <span class="fl">4.4</span>, <span class="fl">12.6</span>, <span class="fl">4.5</span>, <span class="fl">6.1</span>,</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>          <span class="fl">5.3</span>, <span class="fl">5.1</span>, <span class="fl">3.9</span>, <span class="fl">5.5</span>, <span class="fl">5.4</span>, <span class="fl">5.9</span>, <span class="fl">4.3</span>, <span class="fl">10.4</span>, <span class="fl">2.8</span>, <span class="fl">6.9</span>, <span class="fl">9.2</span>, <span class="fl">13.7</span>,</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>          <span class="fl">7.2</span>, <span class="fl">3.6</span>, <span class="fl">5.8</span>, <span class="fl">4.6</span>, <span class="fl">5.3</span>, <span class="fl">7.3</span>, <span class="fl">4.3</span>, <span class="fl">9.3</span>, <span class="fl">8.2</span>, <span class="fl">5.5</span>, <span class="fl">4.6</span>, <span class="fl">5.4</span>)</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://upload.wikimedia.org/wikipedia/en/thumb/0/03/National_Basketball_Association_logo.svg/400px-National_Basketball_Association_logo.svg.png" class="img-fluid figure-img"></p>
+<figcaption>NBA Logo</figcaption>
+</figure>
+</div>
+<p><em>The NBA has evolved dramatically in the three-point era</em> <span class="citation" data-cites="nba2024">(<a href="#ref-nba2024" role="doc-biblioref">National Basketball Association 2024</a>)</span></p>
+</div></div><section id="data-preparation" class="level3">
+<h3 class="anchored" data-anchor-id="data-preparation">Data Preparation</h3>
+<p>To ensure data quality and focus on regular rotation players, I filtered the dataset to include only players who averaged at least 25 minutes per game and appeared in at least 50 games during the season. This removes players with limited sample sizes and focuses the analysis on established contributors.</p>
+<p>I then created several calculated variables to better understand shooting patterns. The three-point rate metric normalizes attempts per 10 minutes of playing time, allowing for fair comparisons between starters and bench players. I also grouped positions into three categories: Guards (PG and SG), Forwards (SF and PF), and Centers (C). This simplification helps reveal broader positional trends without getting lost in the nuances of hybrid positions.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>nba_filtered <span class="ot">&lt;-</span> nba_data <span class="sc">%&gt;%</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(MP <span class="sc">&gt;=</span> <span class="dv">25</span>, G <span class="sc">&gt;=</span> <span class="dv">50</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>nba_enhanced <span class="ot">&lt;-</span> nba_filtered <span class="sc">%&gt;%</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">three_point_rate =</span> TPA <span class="sc">/</span> (MP <span class="sc">/</span> <span class="dv">10</span>),</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">scoring_efficiency =</span> PTS <span class="sc">/</span> FG_pct,</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">position_group =</span> <span class="fu">case_when</span>(</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>      Pos <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"PG"</span>, <span class="st">"SG"</span>) <span class="sc">~</span> <span class="st">"Guards"</span>,</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>      Pos <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"SF"</span>, <span class="st">"PF"</span>) <span class="sc">~</span> <span class="st">"Forwards"</span>,</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>      Pos <span class="sc">==</span> <span class="st">"C"</span> <span class="sc">~</span> <span class="st">"Centers"</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>position_stats <span class="ot">&lt;-</span> nba_enhanced <span class="sc">%&gt;%</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(position_group) <span class="sc">%&gt;%</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">avg_3PA =</span> <span class="fu">mean</span>(TPA, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">avg_3P_pct =</span> <span class="fu">mean</span>(TP_pct, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">avg_PTS =</span> <span class="fu">mean</span>(PTS, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">player_count =</span> <span class="fu">n</span>()</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>top_shooters <span class="ot">&lt;-</span> nba_enhanced <span class="sc">%&gt;%</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(TPA)) <span class="sc">%&gt;%</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Player, Pos, TPA, TP_pct, PTS)</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>shooting_metrics <span class="ot">&lt;-</span> nba_enhanced <span class="sc">%&gt;%</span></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Player, position_group, TPA, TP_pct) <span class="sc">%&gt;%</span></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">cols =</span> <span class="fu">c</span>(TPA, TP_pct),</span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_to =</span> <span class="st">"metric"</span>,</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>    <span class="at">values_to =</span> <span class="st">"value"</span></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+</section>
+</section>
+<section id="results" class="level2">
+<h2 class="anchored" data-anchor-id="results">Results</h2>
+<section id="positional-differences-in-three-point-shooting" class="level3">
+<h3 class="anchored" data-anchor-id="positional-differences-in-three-point-shooting">Positional Differences in Three-Point Shooting</h3>
+<p>The first analysis examines how different position groups approach three-point shooting. As shown in Figure 1, guards clearly lead the league in perimeter attempts, averaging 6.7 three-point shots per game. Forwards sit in the middle at 4.8 attempts, while centers lag far behind at just 1.1 attempts per game. This stark difference reflects the fundamental roles each position plays in modern NBA offenses, with guards serving as primary floor spacers and centers maintaining their traditional interior focus.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(position_stats, <span class="fu">aes</span>(<span class="at">x =</span> position_group, <span class="at">y =</span> avg_3PA, <span class="at">fill =</span> position_group)) <span class="sc">+</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">width =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">round</span>(avg_3PA, <span class="dv">1</span>)), <span class="at">vjust =</span> <span class="sc">-</span><span class="fl">0.5</span>, <span class="at">size =</span> <span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Average Three-Point Attempts by Position"</span>,</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"2023-24 NBA Season (Players with 25+ MPG, 50+ Games)"</span>,</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Position Group"</span>,</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Average 3-Point Attempts per Game"</span>,</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">"Data source: Basketball Reference | Analysis shows Guards dominate perimeter shooting"</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">14</span>) <span class="sc">+</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">"Set2"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-position-shooting" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-position-shooting-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="analysis_files/figure-html/fig-position-shooting-1.png" class="img-fluid figure-img" width="960">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-position-shooting-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Three-point attempts vary significantly by position, with guards leading the modern NBA offense
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Key Finding
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Guards average 6.7 three-point attempts per game, more than six times the rate of centers at 1.1 attempts. This reflects the strategic shift in modern NBA basketball toward perimeter-oriented offense <span class="citation" data-cites="evolution2023">(<a href="#ref-evolution2023" role="doc-biblioref">Goldsberry 2023</a>)</span>.</p>
+</div>
+</div>
+</section>
+<section id="the-volume-accuracy-trade-off" class="level3">
+<h3 class="anchored" data-anchor-id="the-volume-accuracy-trade-off">The Volume-Accuracy Trade-off</h3>
+<p>A key question in basketball analytics is whether high-volume shooting compromises accuracy. The scatter plot below explores this relationship, with each point representing a player and the bubble size indicating their scoring output. The trend line shows a slight negative correlation, but many high-volume shooters maintain strong percentages. Players like Stephen Curry and Damian Lillard demonstrate that it’s possible to take 9-11 three-pointers per game while shooting above 35%, challenging the traditional notion that volume necessarily hurts efficiency.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(nba_enhanced, <span class="fu">aes</span>(<span class="at">x =</span> TPA, <span class="at">y =</span> TP_pct, <span class="at">color =</span> position_group, <span class="at">linewidth =</span> PTS)) <span class="sc">+</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">linewidth =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Three-Point Shooting: Volume vs Accuracy"</span>,</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Bubble size represents points per game"</span>,</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Three-Point Attempts per Game"</span>,</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Three-Point Percentage (%)"</span>,</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"Position"</span>,</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">size =</span> <span class="st">"PPG"</span>,</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">"Data source: Basketball Reference | Higher volume shooters maintain competitive accuracy"</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">14</span>) <span class="sc">+</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_brewer</span>(<span class="at">palette =</span> <span class="st">"Dark2"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
+<div class="cell-output-display">
+<div id="fig-efficiency-scatter" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-efficiency-scatter-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="analysis_files/figure-html/fig-efficiency-scatter-1.png" class="img-fluid figure-img" width="960">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-efficiency-scatter-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Players who attempt more three-pointers show varied efficiency, highlighting the balance between volume and accuracy
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="position-specific-scoring-patterns" class="level3">
+<h3 class="anchored" data-anchor-id="position-specific-scoring-patterns">Position-Specific Scoring Patterns</h3>
+<p>The faceted visualization below breaks down the relationship between scoring and rebounding across the three position groups. Each panel tells a different story about how these positions contribute to team success. Guards show high scoring with low rebounding, consistent with their perimeter-oriented roles. Forwards demonstrate balanced contributions in both areas. Centers dominate the glass while scoring efficiently, though generally at lower volumes than perimeter players. The color gradient by age reveals that elite production isn’t limited to any particular age group, with both veterans and young stars excelling.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(nba_enhanced, <span class="fu">aes</span>(<span class="at">x =</span> PTS, <span class="at">y =</span> TRB, <span class="at">color =</span> Age)) <span class="sc">+</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>position_group, <span class="at">scales =</span> <span class="st">"free"</span>) <span class="sc">+</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Points vs Rebounds by Position Group"</span>,</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Color represents player age - examining veteran vs young player performance"</span>,</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Points per Game"</span>,</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Total Rebounds per Game"</span>,</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"Age"</span>,</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">"Data source: Basketball Reference | Centers dominate rebounding while Guards lead scoring"</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">12</span>) <span class="sc">+</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_gradient</span>(<span class="at">low =</span> <span class="st">"blue"</span>, <span class="at">high =</span> <span class="st">"red"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-faceted-positions" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-faceted-positions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="analysis_files/figure-html/fig-faceted-positions-1.png" class="img-fluid figure-img" width="1152">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-faceted-positions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Detailed comparison of scoring and rebounding by position reveals distinct playing styles
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="league-leaders-in-three-point-shooting" class="level3">
+<h3 class="anchored" data-anchor-id="league-leaders-in-three-point-shooting">League Leaders in Three-Point Shooting</h3>
+<p>The table below lists the top three-point shooters by volume. Notice that point guards and shooting guards dominate the top 10, with only a few forwards breaking into the elite tier. Stephen Curry leads the league with 11.4 attempts per game while maintaining an impressive 40.8% accuracy. This combination of volume and efficiency has redefined what’s possible in perimeter shooting.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(top_shooters, <span class="dv">10</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">1</span>, <span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"Player"</span>, <span class="st">"Position"</span>, <span class="st">"3PA/G"</span>, <span class="st">"3P%"</span>, <span class="st">"PPG"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div id="tbl-top-shooters" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-top-shooters-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Leading three-point shooters in the 2023-24 season
+</figcaption>
+<div aria-describedby="tbl-top-shooters-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Player</th>
+<th style="text-align: left;">Position</th>
+<th style="text-align: right;">3PA/G</th>
+<th style="text-align: right;">3P%</th>
+<th style="text-align: right;">PPG</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Stephen Curry</td>
+<td style="text-align: left;">PG</td>
+<td style="text-align: right;">11.4</td>
+<td style="text-align: right;">40.8</td>
+<td style="text-align: right;">26.4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Damian Lillard</td>
+<td style="text-align: left;">PG</td>
+<td style="text-align: right;">9.5</td>
+<td style="text-align: right;">35.4</td>
+<td style="text-align: right;">24.3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Donovan Mitchell</td>
+<td style="text-align: left;">SG</td>
+<td style="text-align: right;">8.7</td>
+<td style="text-align: right;">36.8</td>
+<td style="text-align: right;">27.1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Trae Young</td>
+<td style="text-align: left;">PG</td>
+<td style="text-align: right;">8.4</td>
+<td style="text-align: right;">37.3</td>
+<td style="text-align: right;">25.7</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Luka Doncic</td>
+<td style="text-align: left;">PG</td>
+<td style="text-align: right;">8.2</td>
+<td style="text-align: right;">38.2</td>
+<td style="text-align: right;">33.9</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Jayson Tatum</td>
+<td style="text-align: left;">SF</td>
+<td style="text-align: right;">8.2</td>
+<td style="text-align: right;">37.6</td>
+<td style="text-align: right;">26.9</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Anthony Edwards</td>
+<td style="text-align: left;">SG</td>
+<td style="text-align: right;">7.0</td>
+<td style="text-align: right;">35.7</td>
+<td style="text-align: right;">25.9</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Lauri Markkanen</td>
+<td style="text-align: left;">PF</td>
+<td style="text-align: right;">6.8</td>
+<td style="text-align: right;">39.9</td>
+<td style="text-align: right;">23.2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Jaylen Brown</td>
+<td style="text-align: left;">SG</td>
+<td style="text-align: right;">6.3</td>
+<td style="text-align: right;">36.0</td>
+<td style="text-align: right;">23.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Devin Booker</td>
+<td style="text-align: left;">SG</td>
+<td style="text-align: right;">5.8</td>
+<td style="text-align: right;">36.4</td>
+<td style="text-align: right;">27.1</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+</section>
+</section>
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary">Summary</h2>
+<p>This analysis reveals the profound impact of the three-point revolution in modern NBA basketball. Guards have fully embraced perimeter shooting, averaging 6.7 three-point attempts per game compared to just 1.1 for centers. Despite the high volume, elite shooters maintain accuracy above 35%, demonstrating that the strategic shift toward three-point shooting is both efficient and effective. The data shows clear positional specialization, with guards serving as primary perimeter threats while centers focus on interior scoring and rebounding. These findings align with broader trends in basketball analytics <span class="citation" data-cites="analytics2024">(<a href="#ref-analytics2024" role="doc-biblioref">Oliver 2024</a>)</span>, which emphasize the mathematical advantage of three-point shooting. The modern NBA has successfully integrated high-volume three-point shooting without sacrificing efficiency, fundamentally transforming the game’s strategic landscape.</p>
+<hr>
+</section>
+<section id="package-functions-used" class="level2">
+<h2 class="anchored" data-anchor-id="package-functions-used">Package Functions Used</h2>
+<p><strong>dplyr package:</strong><br>
+filter(), mutate(), group_by(), summarize(), arrange(), select()</p>
+<p><strong>tidyr package:</strong><br>
+pivot_longer()</p>
+<p><strong>ggplot2 package:</strong><br>
+geom_col(), geom_point(), geom_smooth(), geom_text(), facet_wrap()</p>
+</section>
+<section id="references" class="level2">
+
+
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-evolution2023" class="csl-entry" role="listitem">
+Goldsberry, Kirk. 2023. <span>“The Evolution of NBA Offense: Understanding the Three-Point Revolution.”</span> <em>MIT Sloan Sports Analytics Conference</em>, 1–15.
+</div>
+<div id="ref-nba2024" class="csl-entry" role="listitem">
+National Basketball Association. 2024. <span>“Official NBA Statistics and History.”</span> <a href="https://www.nba.com/stats">https://www.nba.com/stats</a>.
+</div>
+<div id="ref-analytics2024" class="csl-entry" role="listitem">
+Oliver, Dean. 2024. <em>Basketball Analytics: Modern Statistical Analysis</em>. 3rd ed. New York, NY: Sports Analytics Press.
+</div>
+<div id="ref-basketballref2024" class="csl-entry" role="listitem">
+Sports Reference LLC. 2024. <span>“NBA Player Stats: 2023-24 Season.”</span> <a href="https://www.basketball-reference.com/leagues/NBA_2024_per_game.html">https://www.basketball-reference.com/leagues/NBA_2024_per_game.html</a>.
+</div>
+</div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

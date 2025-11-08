@@ -1,0 +1,26 @@
+---
+title: "About Me"
+---
+
+## 🎓 Education
+
+* **Johns Hopkins Bloomberg School of Public Health** | Baltimore, MD
+    * ScM in Biostatistics (Aug 2025 - Present)
+* **Zhejiang University** | Hangzhou, China
+    * BS in Animal Science (Sept 2021 - June 2025)
+
+---
+
+## 🧑‍🎓 Research Interest
+
+* Machine Learning
+* Deep Learning
+* Statistics
+* Spatial Omics Data Science
+* Genomics Data Science
+
+---
+
+## 🎻 Hobbies
+
+I’m really passionate about music and have been playing the violin for 16 years. During college, I was part of the orchestra and took part in many performances, which was an amazing experience. I also enjoy playing basketball and watching the NBA. My favorite team is the Golden State Warriors, and I’m a big fan of Stephen Curry. I love traveling as well, especially going hiking in nature or exploring new cities.

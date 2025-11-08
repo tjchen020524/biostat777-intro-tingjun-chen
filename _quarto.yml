@@ -1,0 +1,19 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Tingjun Chen"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: about.qmd
+        text: About me
+      - href: analysis.qmd
+        text: Example analysis
+
+format:
+  html:
+    theme: cosmo
+    toc: true
